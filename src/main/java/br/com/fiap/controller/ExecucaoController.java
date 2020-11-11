@@ -37,7 +37,7 @@ public class ExecucaoController {
 	}
 	
 	@GetMapping("/{id}")
-	@ApiOperation("Retorna uma ação apartir do identificador")
+	@ApiOperation("Retorna uma execução apartir do identificador")
 	public ResponseEntity<ExecucaoModel> findById(@PathVariable("id") int id) {
 
 		ExecucaoModel execucaoModel = repository.findById(id).get();
@@ -45,7 +45,7 @@ public class ExecucaoController {
 	}
 	
 	@PostMapping()
-	@ApiOperation("Salva uma nova ação")
+	@ApiOperation("Salva uma nova execução")
 	public ResponseEntity save(@RequestBody @Valid ExecucaoModel execucaoModel) {
 
 		repository.save(execucaoModel);
@@ -56,7 +56,7 @@ public class ExecucaoController {
 	}
 	
 	@PutMapping("/{id}")
-	@ApiOperation("Atualiza uma ação apartir do identificador")
+	@ApiOperation("Atualiza uma execução apartir do identificador")
 	public ResponseEntity update(@PathVariable("id") int id, @RequestBody @Valid ExecucaoModel execucaoModel) {
 
 		execucaoModel.setId_execucao(id);
