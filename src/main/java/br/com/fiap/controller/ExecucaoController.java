@@ -7,7 +7,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,60 +16,52 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.com.fiap.model.AcaoModel;
-import br.com.fiap.repository.AcaoRepository;
+
+import br.com.fiap.model.ExecucaoModel;
+import br.com.fiap.repository.ExecucaoRepository;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/acao")
-public class AcaoController {
-	
+@RequestMapping("/execucao")
+public class ExecucaoController {
+
 	@Autowired
-	public AcaoRepository repository;
+	public ExecucaoRepository repository;
 	
 	@GetMapping()
-	@ApiOperation("Retorna uma lista de ações")
-	public ResponseEntity<List<AcaoModel>> findAll() {
+	@ApiOperation("Retorna uma lista de execuções")
+	public ResponseEntity<List<ExecucaoModel>> findAll() {
 
-		List<AcaoModel> acoes = repository.findAll();
-		return ResponseEntity.ok(acoes);
+		List<ExecucaoModel> execucao = repository.findAll();
+		return ResponseEntity.ok(execucao);
 	}
 	
 	@GetMapping("/{id}")
 	@ApiOperation("Retorna uma ação apartir do identificador")
-	public ResponseEntity<AcaoModel> findById(@PathVariable("id") int id) {
+	public ResponseEntity<ExecucaoModel> findById(@PathVariable("id") int id) {
 
-		AcaoModel acaoModel = repository.findById(id).get();
-		return ResponseEntity.ok(acaoModel);
+		ExecucaoModel execucaoModel = repository.findById(id).get();
+		return ResponseEntity.ok(execucaoModel);
 	}
 	
 	@PostMapping()
 	@ApiOperation("Salva uma nova ação")
-	public ResponseEntity save(@RequestBody @Valid AcaoModel acaoModel) {
+	public ResponseEntity save(@RequestBody @Valid ExecucaoModel execucaoModel) {
 
-		repository.save(acaoModel);
+		repository.save(execucaoModel);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(acaoModel.getId_acao()).toUri();
+				.buildAndExpand(execucaoModel.getId_execucao()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 	
 	@PutMapping("/{id}")
 	@ApiOperation("Atualiza uma ação apartir do identificador")
-	public ResponseEntity update(@PathVariable("id") int id, @RequestBody @Valid AcaoModel acaoModel) {
+	public ResponseEntity update(@PathVariable("id") int id, @RequestBody @Valid ExecucaoModel execucaoModel) {
 
-		acaoModel.setId_acao(id);
-		repository.save(acaoModel);
+		execucaoModel.setId_execucao(id);
+		repository.save(execucaoModel);
 
 		return ResponseEntity.ok().build();
-	}
-	
-	@DeleteMapping("/{id}")
-	@ApiOperation("Exclui uma ação apartir do identificador")
-	public ResponseEntity deleteById(@PathVariable("id") int id) {
-
-		repository.deleteById(id);
-
-		return ResponseEntity.noContent().build();
 	}
 }

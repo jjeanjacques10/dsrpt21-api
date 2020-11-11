@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Acao",
+			"name": "Ações",
 			"item": [
 				{
 					"name": "findAll",
@@ -140,6 +140,130 @@
 					"listen": "test",
 					"script": {
 						"id": "8b4ea040-b2d3-4c50-96d6-0a03bd5ba944",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Execuções",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fiap/execucao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"execucao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fiap/execucao/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"execucao",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"acao\": {\r\n        \"id_acao\": 1\r\n    },\r\n    \"data_execucao\": \"2020-10-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fiap/execucao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"execucao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"acao\": {\r\n        \"id_acao\": 2\r\n    },\r\n    \"data_execucao\": \"2020-10-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fiap/execucao/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"execucao",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "93654a98-2fd6-4825-866e-a90546bc664a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f414d368-0ee3-4418-82ae-b18cc882d29f",
 						"type": "text/javascript",
 						"exec": [
 							""
