@@ -26,7 +26,7 @@ public class ExecucaoBusiness {
 	protected void verifyAcaoAtivo(AcaoModel acaoModel) throws ReponseBusinessException {
 		acaoModel = acaoRepository.findById(acaoModel.getId_acao()).get();
 		if (!acaoModel.isAtivo()) {
-			throw new ReponseBusinessException("A ação precisa estar ativa");
+			throw new ReponseBusinessException("A ação precisa estar ativa para cadastrar uma execução");
 		}
 	}
 }

@@ -37,7 +37,7 @@ public class ExecucaoControllerIntegrationTest {
 	@DisplayName("Deve salvar uma execução e retornar com status 200")
 	public void shouldSaveExecucao() throws Exception {
 		mvc.perform(post("/execucao").contentType(MediaType.APPLICATION_JSON)
-				.content("{ \"acao\": { \"id_acao\": 1 }, \"data_execucao\": \"2020-10-11\" }"))
+				.content("{ \"acao\": { \"id_acao\": 1 }, \"data_execucao\": \"2020-05-01 12:30:00\" }"))
 				.andDo(print()).andExpect(status().isCreated()).andExpect(header().exists("Location"));
 	}
 	
@@ -57,7 +57,7 @@ public class ExecucaoControllerIntegrationTest {
 	public void shouldUpdateAcao() throws Exception{
 		mvc.perform(put("/execucao/2")
 				.contentType(MediaType.APPLICATION_JSON)
-				.content("{ \"acao\": { \"id_acao\": 2 }, \"data_execucao\": \"2020-10-11\" }"))
+				.content("{ \"acao\": { \"id_acao\": 2 }, \"data_execucao\": \"2020-05-01 12:30:00\" }"))
 				.andDo(print())
 				.andExpect(status().isOk());
 	}

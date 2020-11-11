@@ -13,6 +13,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "EXECUCAO")
 public class ExecucaoModel {
@@ -44,7 +47,7 @@ public class ExecucaoModel {
 		this.id_execucao = id_execucao;
 	}
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "ID_ACAO", nullable = false)
 	public AcaoModel getAcao() {
 		return acao;

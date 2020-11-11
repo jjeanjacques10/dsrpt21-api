@@ -33,7 +33,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fiap/acao/1",
+							"raw": "localhost:8080/fiap/acao/2",
 							"host": [
 								"localhost"
 							],
@@ -41,7 +41,7 @@
 							"path": [
 								"fiap",
 								"acao",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -53,7 +53,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fiap/acao/1",
+							"raw": "localhost:8080/fiap/acao/3",
 							"host": [
 								"localhost"
 							],
@@ -61,7 +61,7 @@
 							"path": [
 								"fiap",
 								"acao",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -74,7 +74,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Ação de Teste\",\r\n    \"descricao\": \"Esse é um teste\",\r\n    \"ativo\": false\r\n}",
+							"raw": "{\r\n    \"nome\": \"Ação de Teste\",\r\n    \"descricao\": \"Esse é um teste\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -102,7 +102,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Ação de Teste Atualizada\",\r\n    \"descricao\": \"Esse é um teste\",\r\n    \"ativo\": false\r\n}",
+							"raw": "{\r\n    \"nome\": \"Ação Atualizada\",\r\n    \"descricao\": \"Esse é um teste\",\r\n    \"ativo\": false\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -226,7 +226,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"acao\": {\r\n        \"id_acao\": 2\r\n    },\r\n    \"data_execucao\": \"2020-10-11\"\r\n}",
+							"raw": "{\r\n    \"acao\": {\r\n        \"id_acao\": 2\r\n    },\r\n    \"data_execucao\": \"2020-10-11\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
