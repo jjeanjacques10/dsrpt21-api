@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-
+import br.com.fiap.business.ExecucaoBusiness;
+import br.com.fiap.exception.ReponseBusinessException;
 import br.com.fiap.model.ExecucaoModel;
 import br.com.fiap.repository.ExecucaoRepository;
 import io.swagger.annotations.ApiOperation;
@@ -27,6 +28,9 @@ public class ExecucaoController {
 
 	@Autowired
 	public ExecucaoRepository repository;
+	
+	@Autowired
+	public ExecucaoBusiness execucaoBusiness;
 	
 	@GetMapping()
 	@ApiOperation("Retorna uma lista de execuções")
@@ -46,8 +50,10 @@ public class ExecucaoController {
 	
 	@PostMapping()
 	@ApiOperation("Salva uma nova execução")
-	public ResponseEntity save(@RequestBody @Valid ExecucaoModel execucaoModel) {
+	public ResponseEntity save(@RequestBody @Valid ExecucaoModel execucaoModel) throws ReponseBusinessException {
 
+		execucaoBusiness.applyBusiness(execucaoModel);
+		
 		repository.save(execucaoModel);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -57,8 +63,10 @@ public class ExecucaoController {
 	
 	@PutMapping("/{id}")
 	@ApiOperation("Atualiza uma execução apartir do identificador")
-	public ResponseEntity update(@PathVariable("id") int id, @RequestBody @Valid ExecucaoModel execucaoModel) {
+	public ResponseEntity update(@PathVariable("id") int id, @RequestBody @Valid ExecucaoModel execucaoModel) throws ReponseBusinessException {
 
+		execucaoBusiness.applyBusiness(execucaoModel);
+		
 		execucaoModel.setId_execucao(id);
 		repository.save(execucaoModel);
 
