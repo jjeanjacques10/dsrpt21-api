@@ -30,7 +30,7 @@ spring.datasource.password={Adicionar sua senha aqui}
 
 ### 🏃🏻‍♂️ Rodar o projeto
 
-Execute o arquivo **[Dsrpt21Application.java](https://github.com/jjeanjacques10/dsrpt21-api/blob/master/src/main/java/br/com/fiap/dsrpt21/Dsrpt21Application.java)**
+Execute o arquivo **[Dsrpt21Application.java](https://github.com/jjeanjacques10/dsrpt21-api/blob/main/src/main/java/br/com/fiap/Dsrpt21Application.java)**
 
 ## Equipe
 
