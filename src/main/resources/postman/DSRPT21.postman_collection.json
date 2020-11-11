@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "1fb53870-6cf3-4be7-b458-e8102e094604",
+		"name": "DSRPT21",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Acao",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fiap/acao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"acao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fiap/acao/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"acao",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fiap/acao/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"acao",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Ação de Teste\",\r\n    \"descricao\": \"Esse é um teste\",\r\n    \"ativo\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fiap/acao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"acao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Ação de Teste Atualizada\",\r\n    \"descricao\": \"Esse é um teste\",\r\n    \"ativo\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fiap/acao/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"acao",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "88f5b6c3-c7ea-494a-b3ad-44a224736883",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b4ea040-b2d3-4c50-96d6-0a03bd5ba944",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7738d36a-3d7f-43f3-8986-5f8713bd31d3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3ae4eca6-88aa-406c-beb6-4089e6a0f3c0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
