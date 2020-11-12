@@ -66,4 +66,10 @@ public class ExecucaoModel {
 	public void setData_execucao(String data_execucao) {
 		this.data_execucao = data_execucao;
 	}
+
+	@Override
+	public String toString() {
+		return "ExecucaoModel [id_execucao=" + id_execucao + ", acao=" + acao + ", data_execucao=" + data_execucao
+				+ "]";
+	}
 }
