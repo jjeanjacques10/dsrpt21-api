@@ -9,25 +9,6 @@
 			"name": "Ações",
 			"item": [
 				{
-					"name": "findAll",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/fiap/acao",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"fiap",
-								"acao"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "findById",
 					"request": {
 						"method": "GET",
@@ -62,6 +43,25 @@
 								"fiap",
 								"acao",
 								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fiap/acao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"acao"
 							]
 						}
 					},
@@ -198,7 +198,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"acao\": {\r\n        \"id_acao\": 1\r\n    },\r\n    \"data_execucao\": \"2020-10-11\"\r\n}",
+							"raw": "{\r\n    \"acao\": {\r\n        \"id_acao\": 1\r\n    },\r\n    \"data_execucao\": \"2020-05-01 12:30:00\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -226,7 +226,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"acao\": {\r\n        \"id_acao\": 2\r\n    },\r\n    \"data_execucao\": \"2020-10-11\"\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"acao\": {\r\n        \"id_acao\": 2\r\n    },\r\n    \"data_execucao\": \"2020-05-01 12:30:00\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -243,6 +243,26 @@
 								"fiap",
 								"execucao",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fiap/execucao/30",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fiap",
+								"execucao",
+								"30"
 							]
 						}
 					},

@@ -1,7 +1,6 @@
 package br.com.fiap.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -54,7 +53,7 @@ public class ExecucaoControllerIntegrationTest {
 	
 	@Test
 	@DisplayName("Deve atualizar uma execução pelo ID, retornar status 200")
-	public void shouldUpdateAcao() throws Exception{
+	public void shouldUpdateExecucao() throws Exception{
 		mvc.perform(put("/execucao/2")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content("{ \"acao\": { \"id_acao\": 2 }, \"data_execucao\": \"2020-05-01 12:30:00\" }"))

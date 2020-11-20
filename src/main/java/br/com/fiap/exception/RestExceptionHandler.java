@@ -4,7 +4,9 @@ package br.com.fiap.exception;
 import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
